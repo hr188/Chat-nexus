@@ -1,9 +1,9 @@
 "use client";
+
 import axios from "axios";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-
 
 import {
   Dialog,
@@ -36,9 +36,8 @@ const formSchema = z.object({
   })
 });
 
-export const CreateServerModal= () => {
-  
-  const {isOpen,onClose,type } = useModal();
+export const CreateServerModal = () => {
+  const { isOpen, onClose, type } = useModal();
   const router = useRouter();
 
   const isModalOpen = isOpen && type === "createServer";
@@ -59,19 +58,19 @@ export const CreateServerModal= () => {
 
       form.reset();
       router.refresh();
-        onClose();
-      
+      onClose();
     } catch (error) {
-      console.log( "Error aarha boss inside modals initial modals",error);
+      console.log(error);
     }
   }
-  const handleClose = ()=>{
+
+  const handleClose = () => {
     form.reset();
     onClose();
   }
 
   return (
-    <Dialog open={isModalOpen} onOpenChange={handleClose} >
+    <Dialog open={isModalOpen} onOpenChange={handleClose}>
       <DialogContent className="bg-white text-black p-0 overflow-hidden">
         <DialogHeader className="pt-8 px-6">
           <DialogTitle className="text-2xl text-center font-bold">
@@ -85,7 +84,7 @@ export const CreateServerModal= () => {
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
             <div className="space-y-8 px-6">
               <div className="flex items-center justify-center text-center">
-              <FormField
+                <FormField
                   control={form.control}
                   name="imageUrl"
                   render={({ field }) => (

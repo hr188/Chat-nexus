@@ -63,7 +63,7 @@ export const InitialModal = () => {
       router.refresh();
       window.location.reload();
     } catch (error) {
-      console.log( "Error aarha boss inside modals initial modals",error);
+      console.log(error);
     }
   }
 
@@ -86,7 +86,7 @@ export const InitialModal = () => {
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
             <div className="space-y-8 px-6">
               <div className="flex items-center justify-center text-center">
-              <FormField
+                <FormField
                   control={form.control}
                   name="imageUrl"
                   render={({ field }) => (
