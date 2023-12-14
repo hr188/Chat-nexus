@@ -8,7 +8,6 @@ export const initialProfile = async () => {
     }
     
     const { id } = user;
-    
     const profile = await db.profile.findUnique({
         where: { userId: id },
     });
@@ -26,5 +25,5 @@ export const initialProfile = async () => {
 
         }
     })
-     return newProfile;
+    return newProfile;
 };
